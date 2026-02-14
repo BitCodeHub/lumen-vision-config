@@ -286,24 +286,3 @@ Never call tools silently -- the user needs verbal confirmation that you heard t
 
 For messages, confirm recipient and content before delegating unless clearly urgent.
 """
-
-  // ---------------------------------------------------------------
-  // REQUIRED: Add your own Gemini API key here.
-  // Get one at https://aistudio.google.com/apikey
-  // ---------------------------------------------------------------
-  static let apiKey = "AIzaSyCoXEJo2ur47Yw4iAO8SQ5PJRJCMHAHuu4"
-
-  // ---------------------------------------------------------------
-  // OPTIONAL: OpenClaw gateway config (for agentic tool-calling).
-  // Only needed if you want Gemini to perform actions (web search,
-  // send messages, delegate tasks) via an OpenClaw gateway on your Mac.
-  // See README.md for setup instructions.
-  // ---------------------------------------------------------------
-  static let openClawHost = "http://192.168.1.96"
-  static let openClawPort = 18789
-  static let openClawHookToken = "5b8b651934ef54a61eaf385c243baf694c9f9d79c768c1a6"
-  static let openClawGatewayToken = "5b8b651934ef54a61eaf385c243baf694c9f9d79c768c1a6"
-
-  static func websocketURL() -> URL? {
-guard apiKey != "YOUR_GEMINI_API_KEY" && !apiKey.isEmpty else { return nil }
-return URL(string: "\(websocketBaseURL)?key=\(apiKey)")
